@@ -1,6 +1,9 @@
+import Footer from "@/app/components/Footer";
 import Banner from "./Banner";
 import Categories from "./Categories";
+import Feedbacks from "./Feedbacks";
 import Popular from "./Popular";
+import Subscribe from "./Subscribe";
 
 const HomePage = () => {
     return (
@@ -8,6 +11,9 @@ const HomePage = () => {
             <Banner/>
             <Categories />
             <Popular />
+            <Feedbacks />
+            <Subscribe />
+            <Footer />
         </>
     );
 }

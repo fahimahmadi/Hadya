@@ -45,7 +45,7 @@ const products = [
 
 const Popular = () => {
   return (
-    <section className="popular bg-gray-50 p-10 flex flex-col items-center">
+    <section id="populars" className="popular bg-gray-50 p-10 flex flex-col items-center">
       <div className="py-12">
         <h2 className="text-3xl sm:text-4xl lg:text-6xl font-bold mb-4 text-center">
           Featured Gifts

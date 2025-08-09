@@ -14,7 +14,7 @@ type Product = {
 const Product = ({data}:{data:Product}) => {
     return (
       <div className="product-card sm:w-[300px] rounded-md shadow-lg text-sm relative">
-        <span className="absolute z-50 top-2 left-4 bg-pink-600/50 p-1 px-2 rounded-lg text-gray-50 text-sm">{data.badge}</span>
+        <span className="absolute z-40 top-2 left-4 bg-pink-600/50 p-1 px-2 rounded-lg text-gray-50 text-sm">{data.badge}</span>
         <Image
           src={`/products/${data.image}`}
           alt="pink birthday cake on stand"

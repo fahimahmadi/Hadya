@@ -1,41 +1,48 @@
 "use client";
 import Image from "next/image";
-import Link from "next/link";
 import { useState } from "react";
 import { FaSearch, FaShoppingCart, FaUser } from "react-icons/fa";
+import NavLink from "./NavLink";
 
 const Header = () => {
   const [toggle, setToggle] = useState(false);
-
-  function setActiveLink(e: React.MouseEvent) {
-    const target = e.target as HTMLElement;
-    if (target.parentElement) {
-      for (let elem of target.parentElement.children) {
-        elem.classList.remove("active");
-      }
-    }
-    target.classList.add("active");
-  }
 
   return (
     <header className="bg-gray-50 shadow-md fixed w-full top-0 z-50">
       <div className="top px-5 py-3 flex justify-between items-center border-b-1 border-gray-300 bg-gray-800">
         {/* logo */}
         <div>
-          <Link href="/" className="font-bold text-3xl">
-            <Image src="/logo_.png" alt="site logo" width={150} height={50} className="animate-pulse" />
-          </Link>
+          <NavLink href="/" classList="font-bold text-3xl">
+            <Image
+              src="/logo_.png"
+              alt="site logo"
+              width={150}
+              height={50}
+              className=""
+            />
+          </NavLink>
         </div>
-        <nav className="hidden sm:flex space-x-2 text-yellow-500 text-sm">
-          <Link href="/login" className="hover:text-yellow-400">
+        <nav className="hidden sm:flex items-center space-x-2  text-sm">
+          <NavLink
+            href="/user/login"
+            classList="border-gray-50 text-gray-50 border px-3 py-2 rounded-md hover:bg-amber-300 hover:text-gray-800 font-semibold"
+          >
             Login
-          </Link>
-          <Link href="/login" className="hover:text-yellow-400">
+          </NavLink>
+          <NavLink
+            href="/user/signup"
+            classList="px-3 bg-gray-50 rounded-md py-2 text-gray-800 hover:bg-amber-300  font-semibold"
+          >
             Signup
-          </Link>
-          <Link href="tel:+4917655667788" className="mx-6">
-            +49 176 55667788
-          </Link>
+          </NavLink>
+          <div className="flex gap-3 text-sm text-gray-50 mx-4 border-l-2 pl-3">
+            <NavLink href="/eng" classList="font-sans hover:text-amber-400">
+              Eng
+            </NavLink>
+            <NavLink href="/fa" classList="font-sans hover:text-amber-400">
+              دری
+            </NavLink>
+          </div>
         </nav>
         {/* Hamburger Menu */}
         <div className="sm:hidden">
@@ -53,51 +60,38 @@ const Header = () => {
         <div className="flex sm:h-12 items-center">
           {/* Navbar */}
           <nav
-            className="hidden sm:flex space-x-6 text-gray-600 text-sm uppercase w-full"
+            className="hidden sm:flex space-x-6 text-gray-600 text-sm uppercase w-full font-semibold"
             id="menu"
-            onClick={setActiveLink}
           >
-            <Link 
-              href="/gifts/women" 
-              className="hover:text-pink-500">
+            <NavLink href="/gifts/women" classList="hover:text-amber-600">
               For Her
-            </Link>
-            <Link 
-              href="/gifts/men" 
-              className="hover:text-pink-500">
+            </NavLink>
+            <NavLink href="/gifts/men" classList="hover:text-amber-600">
               For Him
-            </Link>
-            <Link 
-              href="/gifts/kids" 
-              className="hover:text-pink-500">
+            </NavLink>
+            <NavLink href="/gifts/kids" classList="hover:text-amber-600">
               Kids
-            </Link>
-            <Link 
-              href="/gifts/occasions" 
-              className="hover:text-pink-500">
+            </NavLink>
+            <NavLink href="/gifts/occasions" classList="hover:text-amber-600">
               Occasions
-            </Link>
-            <Link 
-              href="/sale" 
-              className="text-pink-700 hover:text-pink-500">
-              Sale
-            </Link>
+            </NavLink>
+            <NavLink
+              href="/sales"
+              classList="text-pink-700 hover:text-amber-600 animate-pulse"
+            >
+              Sales
+            </NavLink>
+
             <div className="ml-auto flex space-x-4">
-              <Link 
-                href="/posts" 
-                className="hover:text-pink-500">
+              <NavLink href="/posts" classList="hover:text-amber-600">
                 <FaSearch className="text-xl" />
-              </Link>
-              <Link 
-                href="/posts" 
-                className="hover:text-pink-500">
+              </NavLink>
+              <NavLink href="/user/profile" classList="hover:text-amber-600">
                 <FaUser className="text-xl" />
-              </Link>
-              <Link 
-                href="/cart" 
-                className="hover:text-pink-500">
+              </NavLink>
+              <NavLink href="/order/cart" classList="hover:text-amber-600">
                 <FaShoppingCart className="text-xl" />
-              </Link>
+              </NavLink>
             </div>
           </nav>
         </div>
@@ -107,35 +101,46 @@ const Header = () => {
       <div
         className={`sm:hidden overflow-hidden 
                       transition-all duration-400 ease-in-out
-                      ${toggle ? "max-h-40 opacity-100" : "max-h-0 opacity-0"} 
+                      ${toggle ? "max-h-100 opacity-100" : "max-h-0 opacity-0"} 
                     `}
         id="mobile-menu"
-        onClick={setActiveLink}
       >
-        <Link
-          href="/"
-          className="block py-2 px-4 text-gray-700 hover:bg-sky-300 hover:text-white active"
+        <NavLink
+          href="/gifts/women"
+          classList="block py-2 px-4 text-gray-800 hover:bg-amber-300 hover:text-white"
         >
-          Home
-        </Link>
-        <Link
-          href="/about"
-          className="block py-2 px-4 text-gray-700 hover:bg-sky-300 hover:text-white"
+          For Her
+        </NavLink>
+        <NavLink
+          href="/gifts/men"
+          classList="block py-2 px-4 text-gray-800 hover:bg-amber-300 hover:text-white"
         >
-          About
-        </Link>
-        <Link
-          href="/contact"
-          className="block py-2 px-4 text-gray-700 hover:bg-sky-300 hover:text-white"
+          For Him
+        </NavLink>
+        <NavLink
+          href="/gifts/kids"
+          classList="block py-2 px-4 text-gray-800 hover:bg-amber-300 hover:text-white"
         >
-          Contact
-        </Link>
-        <Link
+          Kids
+        </NavLink>
+        <NavLink
+          href="/gifts/occasions"
+          classList="block py-2 px-4 text-gray-800 hover:bg-amber-300 hover:text-white"
+        >
+          Occasions
+        </NavLink>
+        <NavLink
+          href="/gifts/sales"
+          classList="block py-2 px-4 text-gray-800 hover:bg-amber-300 hover:text-white"
+        >
+          Sales
+        </NavLink>
+        <NavLink
           href="/login"
-          className="block py-2 px-4 text-gray-600 hover:bg-sky-300 hover:text-white font-bold"
+          classList="block py-2 px-4 text-gray-800 hover:bg-amber-300 hover:text-white font-bold"
         >
           Login
-        </Link>
+        </NavLink>
       </div>
     </header>
   );

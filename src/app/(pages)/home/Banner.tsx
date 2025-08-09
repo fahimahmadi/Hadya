@@ -20,20 +20,22 @@ const Banner = () => {
   return (
     <section
       id="banner"
-      className={`flex-1 bg-amber-300 bg-no-repeat bg-cover bg-center pb-30`}
+      className={`flex-1 bg-amber-300 bg-no-repeat bg-cover  bg-center pb-30`}
       style={{ backgroundImage: `url('/bg/${images[bannerIndex]}` }}
     >
-      <div className="text-amber-400 text-3xl p-6 flex justify-end"><FaGift className="animate-bounce"/></div>
+      <div className="text-amber-400 text-3xl p-6">
+        <FaGift className="animate-bounce" />
+      </div>
       {/* titles */}
       <div className="text-white text-center">
-        <div className="flex flex-col align-center text-shadow-md mt-25">
+        <div className="flex flex-col align-center mt-25 text-shadow-lg/20">
           <span className="text-4xl sm:text-6xl lg:text-8xl font-extrabold">
             Perfect Gifts for
           </span>
-          <span className="text-4xl sm:text-6xl lg:text-8xl font-extrabold text-yellow-500">
+          <span className="text-4xl sm:text-6xl lg:text-8xl font-extrabold text-yellow-400">
             Every Occasion
           </span>
-          <p className="text-sm sm:text-lg lg:text-xl max-w-2/3 lg:max-w-1/3 mx-auto mt-7 text-shadow-lg">
+          <p className="text-sm sm:text-lg lg:text-xl max-w-2/3 lg:max-w-1/3 mx-auto mt-7">
             Discover thoughtful gifts that create lasting memories. From
             birthdays to holidays, we have something special for everyone you
             love.
@@ -42,34 +44,34 @@ const Banner = () => {
       </div>
 
       {/* buttons */}
-      <div className="flex space-x-2.5 justify-center-safe mt-12">
+      <div className="flex space-x-2.5 justify-center-safe mt-12 text-white text-md sm:text-lg border-gray-200">
         <Link
           href="/gifts/all"
-          className="bg-amber-400 px-3 md:px-8 py-2 md:py-3 text-md sm:text-lg text-white rounded-md shadow hover:bg-amber-500"
+          className="bg-amber-400 px-3 md:px-8 py-2 md:py-3 rounded-md  border hover:bg-amber-500"
         >
           Shop All Gifts
         </Link>
         <Link
           href="/gifts/finder"
-          className="px-3 md:px-8 py-2 md:py-3 text-md sm:text-lg text-white rounded-md shadow bg-black/10 border-1 hover:bg-gray-50 hover:text-gray-500"
+          className="px-3 md:px-8 py-2 md:py-3 rounded-md bg-black/10 border-1 hover:bg-gray-50 hover:text-gray-500 shadow-lg/30"
         >
           Gift Finder
         </Link>
       </div>
 
       {/* ratings */}
-      <div className="flex flex-wrap gap-x-6 gap-y-3 sm:gap-x-10 justify-center mt-30 text-sm sm:text-lg">
+      <div className="flex flex-wrap gap-x-6 gap-y-3 sm:gap-x-10 justify-center mt-30 text-sm sm:text-lg text-white text-shadow-lg/10">
         <span className="flex gap-x-2 items-center">
-          <FaStar className="text-amber-400 text-shadow-lg" />
-          <span className="text-white">4.9/5 Rating</span>
+          <FaStar className="text-amber-400" />
+          <span className="">4.9/5 Rating</span>
         </span>
         <span className="flex gap-x-2 items-center">
-          <FaGift className="text-amber-400 text-shadow-lg" />
-          <span className="text-white">50K+ Happy Customers</span>
+          <FaGift className="text-amber-400" />
+          <span className="">50K+ Happy Customers</span>
         </span>
         <span className="flex gap-x-2 items-center">
-          <FaHeart className="text-amber-400 text-shadow-lg" />
-          <span className="text-white">Free Gift Wrapping</span>
+          <FaHeart className="text-amber-400" />
+          <span className="">Free Gift Wrapping</span>
         </span>
       </div>
     </section>

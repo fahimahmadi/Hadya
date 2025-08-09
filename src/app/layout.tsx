@@ -1,5 +1,6 @@
 import Header from '@/app/components/Header';
 import './globals.css';
+import Footer from './components/Footer';
 
 
 export const metadata = {
@@ -15,10 +16,11 @@ function RootLayout({children}: PropsType) {
   
   return (
     <html lang="en">
-      <body className="bg-black/50">
+      <body className="bg-black/50 scroll-smooth">
         <main>
-          <Header/>
-            <div className="w-full">{children}</div>
+          <Header />
+          <div className="mt-18 sm:mt-31"></div>
+          <div className="w-full">{children}</div>
         </main>
       </body>
     </html>
